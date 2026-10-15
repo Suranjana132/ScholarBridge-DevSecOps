@@ -1,0 +1,859 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --light-blue: #eff6ff;
+    --background: #f5f7fb;
+    --white: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+
+/* ================= GENERAL ================= */
+
+.hidden {
+    display: none !important;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+input,
+select {
+    outline: none;
+}
+
+
+/* ================= AUTH PAGE ================= */
+
+#authPage {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eaf2ff, #f8fbff);
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+    padding: 40px;
+}
+
+
+/* LEFT BRAND */
+
+.brand-section {
+    width: 480px;
+}
+
+.brand-icon {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    border-radius: 20px;
+    font-size: 38px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.brand-section h1 {
+    font-size: 50px;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.brand-description {
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 450px;
+    margin-bottom: 25px;
+}
+
+.feature-mini {
+    margin: 14px 0;
+    color: #334155;
+}
+
+.feature-mini span {
+    color: var(--success);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+
+/* AUTH BOX */
+
+.auth-box {
+    width: 420px;
+    background: var(--white);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(15, 23, 42, 0.12);
+}
+
+.auth-tabs {
+    display: flex;
+    gap: 5px;
+    background: #f1f5f9;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 11px;
+    background: transparent;
+    border-radius: 7px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.auth-tab.active {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.auth-box h2 {
+    font-size: 27px;
+    margin-bottom: 7px;
+}
+
+.form-subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 15px 0 7px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: white;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.primary-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.primary-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.demo-note {
+    text-align: center;
+    margin-top: 15px;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.logo span {
+    margin-left: 4px;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.logout-btn {
+    background: #fee2e2;
+    color: var(--danger);
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background: #fecaca;
+}
+
+
+/* ================= STUDENT LAYOUT ================= */
+
+.portal-layout {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 235px;
+    background: white;
+    border-right: 1px solid var(--border);
+    padding: 25px 15px;
+}
+
+.side-btn {
+    width: 100%;
+    text-align: left;
+    padding: 13px 15px;
+    margin-bottom: 7px;
+    border-radius: 9px;
+    background: transparent;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.side-btn:hover {
+    background: var(--light-blue);
+    color: var(--primary);
+}
+
+.side-btn.active {
+    background: var(--light-blue);
+    color: var(--primary);
+}
+
+
+/* MAIN */
+
+.main-content {
+    flex: 1;
+    padding: 35px;
+    max-width: 1500px;
+}
+
+.student-section {
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ================= HEADINGS ================= */
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.page-heading h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.page-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* ================= STATS ================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-blue);
+    border-radius: 12px;
+    font-size: 22px;
+}
+
+.stat-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.stat-card h2 {
+    font-size: 25px;
+}
+
+
+/* ================= SECTION HEADER ================= */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+}
+
+.text-btn {
+    background: transparent;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+
+/* ================= SCHOLARSHIP CARDS ================= */
+
+.scholarship-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.scholarship-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+    transition: 0.2s;
+}
+
+.scholarship-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.09);
+}
+
+.scholarship-badge {
+    display: inline-block;
+    background: var(--light-blue);
+    color: var(--primary);
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.scholarship-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.scholarship-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+.scholarship-amount {
+    font-size: 20px;
+    color: var(--success);
+    font-weight: 700;
+    margin: 14px 0;
+}
+
+.apply-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.apply-btn:hover {
+    background: var(--primary-dark);
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.search-bar input {
+    flex: 1;
+}
+
+.search-bar select {
+    width: 200px;
+}
+
+
+/* ================= ELIGIBILITY ================= */
+
+.eligibility-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 28px;
+    max-width: 650px;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+}
+
+.eligibility-card h2 {
+    margin-bottom: 15px;
+}
+
+.eligibility-card .primary-btn {
+    width: auto;
+    padding: 11px 25px;
+}
+
+.eligibility-result {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+.eligible {
+    border-left: 5px solid var(--success);
+}
+
+.not-eligible {
+    border-left: 5px solid var(--danger);
+}
+
+
+/* ================= APPLICATIONS ================= */
+
+.application-item {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 22px;
+    border-radius: 13px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.application-item h3 {
+    margin-bottom: 7px;
+}
+
+.application-item p {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 4px 0;
+}
+
+.status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-approved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* ================= PROFILE ================= */
+
+.profile-card {
+    max-width: 650px;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    background: var(--light-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.profile-card h2 {
+    margin-bottom: 5px;
+}
+
+.profile-card > p {
+    color: var(--muted);
+}
+
+.profile-card hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 25px 0;
+}
+
+.profile-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.profile-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profile-info span {
+    color: var(--muted);
+}
+
+
+/* ================= MODAL ================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-box {
+    background: white;
+    width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 16px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    background: transparent;
+    font-size: 28px;
+    color: var(--muted);
+}
+
+.close-btn:hover {
+    color: var(--danger);
+}
+
+.modal-box h2 {
+    margin-bottom: 5px;
+}
+
+.modal-subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+
+/* ================= ADMIN ================= */
+
+.admin-main {
+    padding: 35px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.admin-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 25px;
+}
+
+.admin-panel .section-header input {
+    width: 280px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    font-size: 13px;
+}
+
+th {
+    background: #f8fafc;
+    color: #475569;
+}
+
+.action-btn {
+    padding: 7px 11px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.approve-btn {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.reject-btn {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+}
+
+
+/* ADMIN SCHOLARSHIPS */
+
+.admin-scholarship-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.admin-scholarship-item {
+    border: 1px solid var(--border);
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.admin-scholarship-item h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.admin-scholarship-item p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .auth-container {
+        gap: 40px;
+    }
+
+    .brand-section {
+        width: 40%;
+    }
+
+    .scholarship-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-scholarship-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .auth-container {
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .brand-section,
+    .auth-box {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .brand-section {
+        text-align: center;
+    }
+
+    .brand-icon {
+        margin: auto auto 15px;
+    }
+
+    .brand-section h1 {
+        font-size: 40px;
+    }
+
+    .portal-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        padding: 10px;
+    }
+
+    .side-btn {
+        min-width: 150px;
+        margin: 0 5px;
+    }
+
+    .main-content,
+    .admin-main {
+        padding: 20px;
+    }
+
+    .scholarship-grid,
+    .admin-scholarship-list {
+        grid-template-columns: 1fr;
+    }
+
+    .application-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-bar select {
+        width: 100%;
+    }
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+}
